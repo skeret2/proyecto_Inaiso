@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <p class="flex items-center justify-center h-screen text-5xl font-serif ">
+      Bienvenida/o a Inaiso
+    </p>
+  
 </template>
