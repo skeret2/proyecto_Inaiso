@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User; //importamos el modelo
 use App\Http\Requests\GuardarUsuarioRequest; //importar el request
 use App\Http\Requests\ActualizarUsuarioRequest;
+use App\Http\Resources\UsuarioResource;
 
 class UserController extends Controller
 {
@@ -24,6 +25,7 @@ class UserController extends Controller
      */
     public function store(GuardarUsuarioRequest $request)  //crear usuario
     {
+
         User::create($request->all());
         return response()->json([
             'res' => true,
@@ -36,6 +38,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+
         return response() ->json([
             'res' => true,
             'user' => $user
@@ -47,11 +50,13 @@ class UserController extends Controller
      */
     public function update(ActualizarUsuarioRequest $request, User $user)
     {
+
         $user->update($request->all());
         return response()->json([
             'res' => true,
             'msg' => 'Usuario modificado exitosamente'
         ],200);
+
     }
 
     /**
@@ -59,6 +64,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+
         $user->delete();
         return response()->json([
             'res => true',
